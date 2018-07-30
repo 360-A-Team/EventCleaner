@@ -109,7 +109,7 @@ HANDLE fn_trav_proc_handle(DWORD dwProcessId) {
 		return FALSE;
 
 
-	for (INT i = 0; i <= psHandleInfo->HandleCount; i++) {
+	for (size_t i = 0; i <= psHandleInfo->HandleCount; i++) {
 
 		psHandle = psHandleInfo->Handles[i];
 		if (psHandle.ProcessId != GetCurrentProcessId())
@@ -121,7 +121,7 @@ HANDLE fn_trav_proc_handle(DWORD dwProcessId) {
 	}
 
 	wcout << "[+] current system version file objectTypeNumber : 0x" << hex << psHandle.ObjectTypeNumber << endl;
-	for (INT i = 0; i <= psHandleInfo->HandleCount; i++) {
+	for (size_t i = 0; i <= psHandleInfo->HandleCount; i++) {
 
 		psHandle = psHandleInfo->Handles[i];
 		if (psHandle.ProcessId != dwProcessId)
